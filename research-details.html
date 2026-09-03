@@ -9,7 +9,12 @@
 
     <title>إعداد الأبحاث الجامعية | Student Pro</title>
 
+
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
 
         * {
             margin: 0;
@@ -18,306 +23,854 @@
             font-family: Arial, sans-serif;
         }
 
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         body {
             background: #f4f7fb;
             color: #1f2937;
         }
 
 
-        /* Header */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
-            background: linear-gradient(135deg, #123c69, #2563eb);
+            background:
+                linear-gradient(
+                    135deg,
+                    #123c69,
+                    #2563eb
+                );
+
             color: white;
+
             text-align: center;
-            padding: 35px 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+
+            padding: 55px 20px 65px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.12);
         }
+
+
+        header::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.08);
+
+            top: -170px;
+            right: -80px;
+        }
+
+
+        header::after {
+            content: "";
+
+            position: absolute;
+
+            width: 240px;
+            height: 240px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.06);
+
+            bottom: -150px;
+            left: -80px;
+        }
+
 
         header h1 {
-            font-size: 35px;
-            margin-bottom: 10px;
+            font-size: 42px;
+
+            margin-bottom: 12px;
+
+            position: relative;
+
+            z-index: 2;
         }
+
 
         header p {
-            font-size: 17px;
-            opacity: 0.9;
+            font-size: 18px;
+
+            opacity: 0.92;
+
+            position: relative;
+
+            z-index: 2;
         }
 
 
-        /* Back */
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-wrapper {
+            max-width: 1050px;
+
+            margin: auto;
+
+            padding: 25px 20px 5px;
+        }
+
 
         .back {
-            display: inline-block;
-            margin: 25px;
-            padding: 11px 20px;
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 12px 21px;
+
             background: white;
+
             color: #2563eb;
+
             text-decoration: none;
-            border-radius: 10px;
+
+            border-radius: 12px;
+
             font-weight: bold;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.07);
+
             transition: 0.3s;
         }
 
+
         .back:hover {
             background: #2563eb;
+
             color: white;
+
+            transform: translateX(5px);
+
+            box-shadow:
+                0 8px 20px rgba(37,99,235,0.2);
         }
 
 
-        /* Main */
+        /* =========================
+           MAIN
+        ========================= */
 
         .container {
-            max-width: 900px;
-            margin: 20px auto 50px;
-            padding: 20px;
+            max-width: 1050px;
+
+            margin: 25px auto 70px;
+
+            padding: 0 20px;
         }
+
+
+        /* =========================
+           SERVICE BOX
+        ========================= */
 
         .service-box {
             background: white;
-            border-radius: 25px;
-            padding: 45px 30px;
+
+            border-radius: 28px;
+
+            padding: 50px 35px;
+
             text-align: center;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.07);
+
+            border: 1px solid #e5e7eb;
         }
 
 
-        /* Icon */
+        /* =========================
+           SERVICE ICON
+        ========================= */
 
         .service-image {
-            width: 150px;
-            height: 150px;
+            width: 135px;
+            height: 135px;
+
             margin: 0 auto 25px;
-            border-radius: 28px;
-            background: #eff6ff;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #dbeafe
+                );
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
-            font-size: 75px;
+            font-size: 72px;
+
+            box-shadow:
+                0 8px 22px rgba(37,99,235,0.12);
+
+            transition: 0.3s;
         }
 
 
-        /* Title */
+        .service-image:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
 
         .service-box h2 {
             color: #123c69;
-            font-size: 32px;
+
+            font-size: 34px;
+
             margin-bottom: 20px;
         }
 
 
-        /* Description */
+        /* =========================
+           DESCRIPTION
+        ========================= */
 
         .description {
-            max-width: 700px;
+            max-width: 760px;
+
             margin: auto;
+
             color: #4b5563;
-            font-size: 19px;
+
+            font-size: 18px;
+
             line-height: 2;
+
+            margin-bottom: 35px;
         }
 
 
-        /* Main Service */
+        /* =========================
+           SERVICE SECTIONS
+        ========================= */
 
         .main-service {
-            margin: 35px auto 25px;
-            padding: 25px;
-            max-width: 700px;
-            background: #eff6ff;
-            border-radius: 18px;
-            border-right: 5px solid #2563eb;
+            max-width: 800px;
+
+            margin: 25px auto;
+
+            padding: 28px 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #f8fbff
+                );
+
+            border-radius: 20px;
+
+            border-right: 6px solid #2563eb;
+
             text-align: right;
+
+            box-shadow:
+                0 5px 18px rgba(37,99,235,0.06);
+
+            transition: 0.3s;
         }
+
+
+        .main-service:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(37,99,235,0.10);
+        }
+
 
         .main-service h3 {
             color: #123c69;
-            font-size: 24px;
+
+            font-size: 25px;
+
             margin-bottom: 18px;
         }
 
+
         .main-service ul {
             list-style: none;
+
             padding: 0;
         }
 
+
         .main-service li {
             color: #374151;
-            font-size: 18px;
+
+            font-size: 17px;
+
             line-height: 1.9;
-            margin-bottom: 8px;
+
+            margin-bottom: 10px;
+
+            position: relative;
+
+            padding-right: 27px;
         }
+
 
         .main-service li::before {
             content: "✓";
+
+            position: absolute;
+
+            right: 0;
+
+            top: 0;
+
             color: #2563eb;
+
             font-weight: bold;
-            margin-left: 8px;
+
+            font-size: 19px;
         }
 
 
-        /* Portfolio */
+        /* =========================
+           PORTFOLIO
+        ========================= */
 
         .portfolio {
-            max-width: 700px;
-            margin: 40px auto 0;
+            max-width: 900px;
+
+            margin: 55px auto 10px;
         }
 
-        .portfolio h3 {
-            color: #123c69;
-            font-size: 26px;
-            margin-bottom: 22px;
+
+        .portfolio-header {
+            text-align: center;
+
+            margin-bottom: 30px;
         }
+
+
+        .portfolio-header h3 {
+            color: #123c69;
+
+            font-size: 29px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .portfolio-header p {
+            color: #6b7280;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           PORTFOLIO GRID
+        ========================= */
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 24px;
         }
+
+
+        /* =========================
+           PORTFOLIO ITEM
+        ========================= */
 
         .portfolio-item {
             background: white;
-            border-radius: 18px;
-            padding: 8px;
+
+            border-radius: 20px;
+
+            padding: 9px;
+
             overflow: hidden;
+
             border: 1px solid #e5e7eb;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.10);
-            transition: 0.3s;
+
+            box-shadow:
+                0 7px 25px rgba(0,0,0,0.08);
+
+            transition: 0.35s;
+
+            cursor: pointer;
         }
 
+
         .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(37,99,235,0.18);
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 16px 35px rgba(37,99,235,0.16);
+
+            border-color: #bfdbfe;
         }
+
+
+        /* =========================
+           IMAGE
+        ========================= */
+
+        .portfolio-image {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 15px;
+        }
+
 
         .portfolio-item img {
             width: 100%;
-            height: 360px;
+
+            height: 420px;
+
             object-fit: cover;
+
             display: block;
-            border-radius: 13px;
+
+            border-radius: 15px;
+
+            transition: 0.4s;
         }
+
+
+        .portfolio-item:hover img {
+            transform: scale(1.03);
+        }
+
+
+        /* =========================
+           IMAGE OVERLAY
+        ========================= */
+
+        .image-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                rgba(18,60,105,0.55);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            opacity: 0;
+
+            transition: 0.3s;
+
+            border-radius: 15px;
+        }
+
+
+        .portfolio-item:hover .image-overlay {
+            opacity: 1;
+        }
+
+
+        .image-overlay span {
+            background: white;
+
+            color: #2563eb;
+
+            padding: 12px 20px;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           PORTFOLIO TITLE
+        ========================= */
 
         .portfolio-title {
-            padding: 13px 5px 9px;
+            padding: 15px 8px 10px;
+
             color: #374151;
+
             font-size: 15px;
+
             font-weight: bold;
+
+            text-align: center;
         }
 
 
-        /* Buttons */
+        /* =========================
+           LIGHTBOX
+        ========================= */
 
-        .buttons {
+        .lightbox {
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,0.88);
+
             display: flex;
-            justify-content: center;
+
             align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+
+            justify-content: center;
+
+            padding: 25px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: 0.3s;
+
+            z-index: 9999;
         }
 
-        .button {
-            display: inline-block;
-            padding: 14px 27px;
-            color: white;
-            text-decoration: none;
+
+        .lightbox.active {
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        .lightbox img {
+            max-width: 92%;
+
+            max-height: 90vh;
+
+            object-fit: contain;
+
             border-radius: 12px;
-            font-weight: bold;
-            font-size: 16px;
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,0.4);
+        }
+
+
+        .close-lightbox {
+            position: absolute;
+
+            top: 20px;
+
+            left: 25px;
+
+            width: 45px;
+            height: 45px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: white;
+
+            color: #111827;
+
+            font-size: 28px;
+
+            cursor: pointer;
+
+            line-height: 45px;
+
             transition: 0.3s;
         }
 
-        .button:hover {
-            transform: translateY(-3px);
+
+        .close-lightbox:hover {
+            background: #2563eb;
+
+            color: white;
+
+            transform: rotate(90deg);
         }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-top: 45px;
+        }
+
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            padding: 15px 28px;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 13px;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+
+        .button:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.13);
+        }
+
+
+        /* =========================
+           WHATSAPP
+        ========================= */
 
         .whatsapp {
             background: #25D366;
         }
 
+
         .whatsapp:hover {
             background: #128C7E;
         }
 
+
+        /* =========================
+           GROUP
+        ========================= */
+
         .group {
             background: #16a34a;
         }
+
 
         .group:hover {
             background: #15803d;
         }
 
 
-        /* Footer */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: #111827;
+
             color: white;
+
             text-align: center;
-            padding: 22px;
-            line-height: 1.8;
+
+            padding: 25px 20px;
+
+            line-height: 1.9;
+
             font-size: 14px;
         }
 
 
-        /* Mobile */
+        footer strong {
+            color: #60a5fa;
+        }
 
-        @media (max-width: 600px) {
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 45px 20px 55px;
+            }
+
 
             header h1 {
-                font-size: 28px;
+                font-size: 31px;
             }
+
+
+            header p {
+                font-size: 16px;
+            }
+
+
+            .container {
+                padding: 0 14px;
+
+                margin-top: 20px;
+            }
+
 
             .service-box {
-                padding: 35px 20px;
+                padding: 35px 18px;
             }
+
+
+            .service-image {
+                width: 115px;
+                height: 115px;
+
+                font-size: 60px;
+            }
+
 
             .service-box h2 {
-                font-size: 26px;
+                font-size: 27px;
+
+                line-height: 1.5;
             }
 
+
             .description {
-                font-size: 17px;
+                font-size: 16px;
+
+                line-height: 1.9;
             }
+
+
+            .main-service {
+                padding: 23px 20px;
+            }
+
 
             .main-service h3 {
                 font-size: 21px;
             }
 
+
             .main-service li {
-                font-size: 16px;
+                font-size: 15px;
+
+                line-height: 1.8;
             }
 
 
-            /* Portfolio Mobile */
+            /* Portfolio */
+
+            .portfolio {
+                margin-top: 45px;
+            }
+
+
+            .portfolio-header h3 {
+                font-size: 25px;
+            }
+
 
             .portfolio-grid {
                 grid-template-columns: 1fr;
+
+                gap: 20px;
             }
+
 
             .portfolio-item img {
                 height: auto;
-                max-height: 550px;
+
+                max-height: 600px;
+
                 object-fit: contain;
+
+                background: #f8fafc;
             }
 
-            .portfolio h3 {
-                font-size: 23px;
+
+            .image-overlay {
+                display: none;
             }
 
 
-            /* Buttons Mobile */
+            /* Buttons */
 
             .buttons {
                 flex-direction: column;
+
+                gap: 12px;
             }
 
+
             .button {
-                width: 90%;
+                width: 92%;
+            }
+
+
+            /* Lightbox */
+
+            .lightbox {
+                padding: 15px;
+            }
+
+
+            .lightbox img {
+                max-width: 96%;
+
+                max-height: 85vh;
+            }
+
+
+            .close-lightbox {
+                top: 12px;
+
+                left: 12px;
             }
 
         }
@@ -330,7 +883,9 @@
 <body>
 
 
-    <!-- Header -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <header>
 
@@ -345,24 +900,34 @@
     </header>
 
 
-    <!-- Back -->
+    <!-- =========================
+         BACK
+    ========================= -->
 
-    <a
-        href="university.html"
-        class="back"
-    >
-        ← العودة إلى الخدمات الجامعية
-    </a>
+    <div class="back-wrapper">
+
+        <a
+            href="university.html"
+            class="back"
+        >
+            ← العودة إلى الخدمات الجامعية
+        </a>
+
+    </div>
 
 
-    <!-- Service -->
+    <!-- =========================
+         MAIN
+    ========================= -->
 
     <main class="container">
 
         <div class="service-box">
 
 
-            <!-- أيقونة الأبحاث -->
+            <!-- =========================
+                 ICON
+            ========================= -->
 
             <div class="service-image">
 
@@ -371,16 +936,18 @@
             </div>
 
 
-            <!-- العنوان -->
+            <!-- =========================
+                 TITLE
+            ========================= -->
 
             <h2>
-
                 📝 إعداد الأبحاث الجامعية
-
             </h2>
 
 
-            <!-- الوصف -->
+            <!-- =========================
+                 DESCRIPTION
+            ========================= -->
 
             <p class="description">
 
@@ -391,15 +958,16 @@
             </p>
 
 
-            <!-- خدمة Word -->
+            <!-- =========================
+                 WORD SERVICE
+            ========================= -->
 
             <div class="main-service">
 
                 <h3>
-
                     📝 خدمة Word
-
                 </h3>
+
 
                 <ul>
 
@@ -424,15 +992,16 @@
             </div>
 
 
-            <!-- خدمة PowerPoint -->
+            <!-- =========================
+                 POWERPOINT SERVICE
+            ========================= -->
 
             <div class="main-service">
 
                 <h3>
-
                     📊 خدمة PowerPoint
-
                 </h3>
+
 
                 <ul>
 
@@ -457,15 +1026,26 @@
             </div>
 
 
-            <!-- معرض الأعمال -->
+            <!-- =========================
+                 PORTFOLIO
+            ========================= -->
 
-            <div class="portfolio">
+            <section class="portfolio">
 
-                <h3>
 
-                    🖼️ معرض الأعمال
+                <div class="portfolio-header">
 
-                </h3>
+                    <h3>
+                        🖼️ معرض الأعمال
+                    </h3>
+
+
+                    <p>
+                        نماذج من بعض الأعمال والتصميمات التي تم تنفيذها.
+                        اضغط على أي صورة لمشاهدتها بحجم أكبر.
+                    </p>
+
+                </div>
 
 
                 <div class="portfolio-grid">
@@ -473,12 +1053,28 @@
 
                     <!-- العمل الأول -->
 
-                    <div class="portfolio-item">
+                    <div
+                        class="portfolio-item"
+                        onclick="openImage('work2 (1).png')"
+                    >
 
-                        <img
-                            src="work2 (1).png"
-                            alt="نموذج من أعمال الأبحاث الجامعية"
-                        >
+                        <div class="portfolio-image">
+
+                            <img
+                                src="work2 (1).png"
+                                alt="نموذج من أعمال الأبحاث الجامعية"
+                            >
+
+                            <div class="image-overlay">
+
+                                <span>
+                                    🔍 عرض الصورة
+                                </span>
+
+                            </div>
+
+                        </div>
+
 
                         <div class="portfolio-title">
 
@@ -491,12 +1087,28 @@
 
                     <!-- العمل الثاني -->
 
-                    <div class="portfolio-item">
+                    <div
+                        class="portfolio-item"
+                        onclick="openImage('work2 (2).png')"
+                    >
 
-                        <img
-                            src="work2 (2).png"
-                            alt="نموذج من أعمال الأبحاث الجامعية"
-                        >
+                        <div class="portfolio-image">
+
+                            <img
+                                src="work2 (2).png"
+                                alt="نموذج من أعمال الأبحاث الجامعية"
+                            >
+
+                            <div class="image-overlay">
+
+                                <span>
+                                    🔍 عرض الصورة
+                                </span>
+
+                            </div>
+
+                        </div>
+
 
                         <div class="portfolio-title">
 
@@ -506,44 +1118,99 @@
 
                     </div>
 
-<!-- العمل الثالث -->
 
-                    <div class="portfolio-item">
+                    <!-- العمل الثالث -->
 
-                        <img
-                            src="work2 (3).png"
-                            alt="نموذج من أعمال الأبحاث الجامعية"
-                        >
+                    <div
+                        class="portfolio-item"
+                        onclick="openImage('work2 (3).png')"
+                    >
+
+                        <div class="portfolio-image">
+
+                            <img
+                                src="work2 (3).png"
+                                alt="نموذج من أعمال الأبحاث الجامعية"
+                            >
+
+                            <div class="image-overlay">
+
+                                <span>
+                                    🔍 عرض الصورة
+                                </span>
+
+                            </div>
+
+                        </div>
+
 
                         <div class="portfolio-title">
 
                             📄 نموذج من أعمالنا
 
                         </div>
+
                     </div>
+
+
                     <!-- العمل الرابع -->
 
-                    <div class="portfolio-item">
+                    <div
+                        class="portfolio-item"
+                        onclick="openImage('work2 (4).png')"
+                    >
 
-                        <img
-                            src="work2 (4).png"
-                            alt="نموذج من أعمال الأبحاث الجامعية"
-                        >
+                        <div class="portfolio-image">
+
+                            <img
+                                src="work2 (4).png"
+                                alt="نموذج من أعمال الأبحاث الجامعية"
+                            >
+
+                            <div class="image-overlay">
+
+                                <span>
+                                    🔍 عرض الصورة
+                                </span>
+
+                            </div>
+
+                        </div>
+
 
                         <div class="portfolio-title">
 
                             📄 نموذج من أعمالنا
 
                         </div>
+
                     </div>
+
+
                     <!-- العمل الخامس -->
 
-                    <div class="portfolio-item">
+                    <div
+                        class="portfolio-item"
+                        onclick="openImage('work2 (5).png')"
+                    >
 
-                        <img
-                            src="work2 (5).png"
-                            alt="نموذج من أعمال الأبحاث الجامعية"
-                        >
+                        <div class="portfolio-image">
+
+                            <img
+                                src="work2 (5).png"
+                                alt="نموذج من أعمال الأبحاث الجامعية"
+                            >
+
+                            <div class="image-overlay">
+
+                                <span>
+                                    🔍 عرض الصورة
+                                </span>
+
+                            </div>
+
+                        </div>
+
 
                         <div class="portfolio-title">
 
@@ -552,11 +1219,16 @@
                         </div>
 
                     </div>
+
+
                 </div>
-            </div>
+
+            </section>
 
 
-            <!-- الأزرار -->
+            <!-- =========================
+                 BUTTONS
+            ========================= -->
 
             <div class="buttons">
 
@@ -595,17 +1267,115 @@
     </main>
 
 
-    <!-- Footer -->
+    <!-- =========================
+         LIGHTBOX
+    ========================= -->
+
+    <div
+        class="lightbox"
+        id="lightbox"
+        onclick="closeImage(event)"
+    >
+
+        <button
+            class="close-lightbox"
+            onclick="closeLightbox()"
+        >
+            ×
+        </button>
+
+
+        <img
+            id="lightbox-image"
+            src=""
+            alt="عرض العمل"
+        >
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
-        © 2026 Student Pro
+        © 2026 <strong>Student Pro</strong>
 
         <br>
 
         جميع الحقوق محفوظة
 
     </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        function openImage(imageSrc) {
+
+            const lightbox =
+                document.getElementById("lightbox");
+
+            const image =
+                document.getElementById("lightbox-image");
+
+            image.src = imageSrc;
+
+            lightbox.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        function closeLightbox(event) {
+
+            if (
+                event &&
+                event.target.id !== "lightbox"
+            ) {
+                return;
+            }
+
+            closeLightboxWindow();
+        }
+
+
+        function closeLightboxWindow() {
+
+            const lightbox =
+                document.getElementById("lightbox");
+
+            lightbox.classList.remove("active");
+
+            document.body.style.overflow = "auto";
+        }
+
+
+        function closeImage() {
+
+            closeLightboxWindow();
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    closeLightboxWindow();
+
+                }
+
+            }
+        );
+
+    </script>
 
 
 </body>
