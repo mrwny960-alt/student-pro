@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>تصميم البروشورات الجامعية | Student Pro</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #123c69,
+                    #2563eb
+                );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 55px 20px 65px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.12);
+        }
+
+
+        header::before {
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.08);
+
+            top: -150px;
+            right: -80px;
+        }
+
+
+        header::after {
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.06);
+
+            bottom: -130px;
+            left: -70px;
+        }
+
+
+        header h1 {
+            font-size: 42px;
+
+            margin-bottom: 12px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        header p {
+            font-size: 18px;
+
+            opacity: 0.92;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =========================
+           زر الرجوع
+        ========================= */
+
+        .back-wrapper {
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 25px 20px 5px;
+        }
+
+
+        .back-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 12px 20px;
+
+            background: white;
+
+            color: #2563eb;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.07);
+
+            transition: 0.3s;
+        }
+
+
+        .back-button:hover {
+            background: #2563eb;
+
+            color: white;
+
+            transform: translateX(5px);
+
+            box-shadow:
+                0 8px 20px rgba(37,99,235,0.2);
+        }
+
+
+        /* =========================
+           المحتوى الرئيسي
+        ========================= */
+
+        .container {
+            max-width: 1000px;
+
+            margin: 30px auto 70px;
+
+            padding: 0 20px;
+        }
+
+
+        /* =========================
+           الكارت الرئيسي
+        ========================= */
+
+        .main-card {
+            background: white;
+
+            border-radius: 28px;
+
+            padding: 40px 30px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.08);
+
+            border: 1px solid #e5e7eb;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .main-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #60a5fa
+                );
+        }
+
+
+        /* =========================
+           الأيقونة
+        ========================= */
+
+        .service-icon {
+            width: 120px;
+            height: 120px;
+
+            margin: 5px auto 25px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #dbeafe
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 60px;
+
+            box-shadow:
+                0 8px 22px rgba(0,0,0,0.08);
+        }
+
+
+        /* =========================
+           العنوان
+        ========================= */
+
+        .main-title {
+            text-align: center;
+        }
+
+
+        .main-title h2 {
+            font-size: 32px;
+
+            color: #123c69;
+
+            margin-bottom: 15px;
+        }
+
+
+        .main-title p {
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #6b7280;
+
+            font-size: 17px;
+
+            line-height: 2;
+        }
+
+
+        /* =========================
+           الأقسام
+        ========================= */
+
+        .section {
+            margin-top: 40px;
+        }
+
+
+        .section-title {
+            color: #123c69;
+
+            font-size: 24px;
+
+            margin-bottom: 20px;
+
+            border-right: 5px solid #2563eb;
+
+            padding-right: 12px;
+        }
+
+
+        /* =========================
+           الخدمات
+        ========================= */
+
+        .features {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .feature {
+            background: #f8fbff;
+
+            border: 1px solid #dbeafe;
+
+            border-radius: 18px;
+
+            padding: 23px;
+
+            transition: 0.3s;
+        }
+
+
+        .feature:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px rgba(37,99,235,0.10);
+        }
+
+
+        .feature h3 {
+            color: #123c69;
+
+            font-size: 18px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .feature p {
+            color: #6b7280;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           خطوات الطلب
+        ========================= */
+
+        .steps {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .step {
+            background: #f8fbff;
+
+            border: 1px solid #dbeafe;
+
+            border-radius: 18px;
+
+            padding: 25px 15px;
+
+            text-align: center;
+        }
+
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+
+            margin: 0 auto 12px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #123c69,
+                    #2563eb
+                );
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 19px;
+
+            font-weight: bold;
+        }
+
+
+        .step h3 {
+            color: #123c69;
+
+            margin-bottom: 7px;
+
+            font-size: 18px;
+        }
+
+
+        .step p {
+            color: #6b7280;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           ملاحظة
+        ========================= */
+
+        .note {
+            margin-top: 30px;
+
+            background: #eff6ff;
+
+            border-right: 5px solid #2563eb;
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+            color: #374151;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           الأزرار
+        ========================= */
+
+        .buttons {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-top: 35px;
+        }
+
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            padding: 14px 25px;
+
+            border-radius: 13px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.12);
+        }
+
+
+        .whatsapp-button {
+            background: #25D366;
+        }
+
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+        }
+
+
+        .group-button {
+            background: #123c69;
+        }
+
+
+        .group-button:hover {
+            background: #2563eb;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111827;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 20px;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        footer strong {
+            color: #60a5fa;
+        }
+
+
+        /* =========================
+           الموبايل
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            header {
+                padding: 45px 20px 50px;
+            }
+
+
+            header h1 {
+                font-size: 31px;
+            }
+
+
+            header p {
+                font-size: 16px;
+            }
+
+
+            .container {
+                padding: 0 15px;
+
+                margin-top: 25px;
+            }
+
+
+            .main-card {
+                padding: 32px 20px;
+
+                border-radius: 22px;
+            }
+
+
+            .main-title h2 {
+                font-size: 27px;
+            }
+
+
+            .main-title p {
+                font-size: 15px;
+            }
+
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+
+            .buttons {
+                flex-direction: column;
+            }
+
+
+            .button {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <h1>
+            Student Pro
+        </h1>
+
+        <p>
+            تفاصيل خدمة تصميم البروشورات الجامعية
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         زر الرجوع
+    ========================= -->
+
+    <div class="back-wrapper">
+
+        <a
+            href="university.html"
+            class="back-button"
+        >
+            ← العودة للخدمات الجامعية
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         المحتوى
+    ========================= -->
+
+    <main class="container">
+
+        <div class="main-card">
+
+
+            <!-- الأيقونة -->
+
+            <div class="service-icon">
+
+                📖
+
+            </div>
+
+
+            <!-- العنوان -->
+
+            <div class="main-title">
+
+                <h2>
+                    📖 تصميم البروشورات الجامعية
+                </h2>
+
+                <p>
+                    خدمة متخصصة في تصميم البروشورات الجامعية
+                    بصورة احترافية ومنظمة، مع الاهتمام بشكل
+                    التصميم وترتيب المعلومات وسهولة القراءة.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 ماذا نقدم؟
+            ========================= -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    🎯 ماذا نقدم لك؟
+                </h2>
+
+
+                <div class="features">
+
+
+                    <div class="feature">
+
+                        <h3>
+                            🎨 تصميم احترافي
+                        </h3>
+
+                        <p>
+                            تصميم بروشور بشكل جذاب ومنظم
+                            يناسب المحتوى المطلوب.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <h3>
+                            📝 تنسيق المحتوى
+                        </h3>
+
+                        <p>
+                            ترتيب العناوين والنصوص والمعلومات
+                            بطريقة واضحة وسهلة القراءة.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <h3>
+                            🖼️ إضافة الصور
+                        </h3>
+
+                        <p>
+                            تنسيق الصور والعناصر البصرية
+                            بما يتناسب مع موضوع البروشور.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <h3>
+                            📄 تجهيز للطباعة
+                        </h3>
+
+                        <p>
+                            تجهيز التصميم بصورة مناسبة
+                            للاستخدام والطباعة.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 خطوات الطلب
+            ========================= -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    🚀 طريقة طلب الخدمة
+                </h2>
+
+
+                <div class="steps">
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <h3>
+                            💬 تواصل معنا
+                        </h3>
+
+                        <p>
+                            اضغط على زر طلب الخدمة
+                            وتواصل معنا عبر واتساب.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <h3>
+                            📋 أرسل المطلوب
+                        </h3>
+
+                        <p>
+                            أرسل محتوى البروشور والتفاصيل
+                            التي تريد إضافتها للتصميم.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <h3>
+                            ✅ استلام التصميم
+                        </h3>
+
+                        <p>
+                            يتم تجهيز التصميم وتسليمه
+                            بصورة منظمة وجاهزة للاستخدام.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 ملاحظة
+            ========================= -->
+
+            <div class="note">
+
+                💡
+                <strong>ملاحظة:</strong>
+
+                يفضل إرسال جميع المعلومات والصور المطلوبة
+                قبل بدء التصميم حتى يتم تجهيز البروشور
+                بالشكل المناسب.
+
+            </div>
+
+
+            <!-- =========================
+                 الأزرار
+            ========================= -->
+
+            <div class="buttons">
+
+
+                <a
+                    href="https://wa.me/201554725979?text=أريد%20طلب%20خدمة%20تصميم%20بروشور%20جامعي"
+                    class="button whatsapp-button"
+                    target="_blank"
+                >
+                    💬 اطلب الخدمة عبر واتساب
+                </a>
+
+
+                <a
+                    href="https://chat.whatsapp.com/IGLhu3G0aN5Hp5sC7itqlg?s=sw&p=a&mlu=4"
+                    class="button group-button"
+                    target="_blank"
+                >
+                    👥 الانضمام إلى جروب الواتساب
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026
+        <strong>Student Pro</strong>
+
+        <br>
+
+        جميع الحقوق محفوظة
+
+    </footer>
+
+
+</body>
+
+</html>
