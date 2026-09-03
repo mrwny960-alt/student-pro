@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Pro</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fb;
+            color: #222;
+        }
+
+        /* الشريط العلوي */
+        header {
+            background-color: #1d4ed8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        /* الترحيب */
+        .welcome {
+            text-align: center;
+            padding: 40px 20px 25px;
+        }
+
+        .welcome h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        /* الأقسام */
+        .categories {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+
+            display: grid;
+
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+
+            gap: 25px;
+        }
+
+        /* كروت الأقسام */
+        .card {
+            background-color: white;
+
+            border-radius: 15px;
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            color: #222;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        /* حركة الكارت عند مرور الماوس */
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* الأيقونة */
+        .icon {
+            font-size: 55px;
+
+            margin-bottom: 15px;
+        }
+
+        /* اسم القسم */
+        .card h3 {
+            font-size: 22px;
+
+            margin-bottom: 10px;
+        }
+
+        /* وصف القسم */
+        .card p {
+            color: #666;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================= -->
+    <!-- الشريط العلوي -->
+    <!-- ========================= -->
+
+    <header>
+
+        <h1>Student Pro</h1>
+
+        <p>
+            كل خدماتك في مكان واحد
+        </p>
+
+    </header>
+
+
+    <!-- ========================= -->
+    <!-- الترحيب -->
+    <!-- ========================= -->
+
+    <section class="welcome">
+
+        <h2>
+            مرحبًا بك في Student Pro
+        </h2>
+
+        <p>
+            اختر القسم الذي تريد الدخول إليه
+        </p>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- الأقسام الرئيسية -->
+    <!-- ========================= -->
+
+    <main class="categories">
+
+
+        <!-- الخدمات الجامعية -->
+
+        <a
+            href="university.html"
+            class="card"
+        >
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <h3>
+                الخدمات الجامعية
+            </h3>
+
+            <p>
+                أبحاث، Assignments، عروض تقديمية والمزيد
+            </p>
+
+        </a>
+
+
+        <!-- الخدمات الإلكترونية -->
+
+        <a
+            href="electronic.html"
+            class="card"
+        >
+
+            <div class="icon">
+                💻
+            </div>
+
+            <h3>
+                الخدمات الإلكترونية
+            </h3>
+
+            <p>
+                تقديمات وخدمات إلكترونية متنوعة
+            </p>
+
+        </a>
+
+
+        <!-- خدمات المدرسين -->
+
+        <a
+            href="teachers.html"
+            class="card"
+        >
+
+            <div class="icon">
+                👨‍🏫
+            </div>
+
+            <h3>
+                خدمات المدرسين
+            </h3>
+
+            <p>
+                مذكرات، أسئلة، امتحانات، ملازم وغيرها
+            </p>
+
+        </a>
+
+
+    </main>
+
+
+</body>
+
+</html>

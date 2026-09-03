@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>الخدمات الجامعية | Student Pro</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: linear-gradient(135deg, #123c69, #2563eb);
+            color: white;
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* =========================
+           زر الرجوع
+        ========================= */
+
+        .back-button {
+            display: inline-block;
+            margin: 25px;
+            padding: 11px 20px;
+            background: white;
+            color: #1d4ed8;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #1d4ed8;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* =========================
+           عنوان الصفحة
+        ========================= */
+
+        .page-title {
+            text-align: center;
+            padding: 5px 20px 35px;
+        }
+
+        .page-title h2 {
+            font-size: 30px;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        .page-title p {
+            color: #6b7280;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           الخدمات
+        ========================= */
+
+        .services {
+            max-width: 1100px;
+            margin: auto;
+            padding: 10px 20px 60px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 25px;
+        }
+
+        /* =========================
+           كارت الخدمة
+        ========================= */
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+
+            text-align: center;
+
+            border: 1px solid #e5e7eb;
+
+            box-shadow:
+                0 6px 22px rgba(0, 0, 0, 0.07);
+
+            transition: 0.35s;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background: linear-gradient(
+                90deg,
+                #1d4ed8,
+                #60a5fa
+            );
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(30, 64, 175, 0.15);
+        }
+
+        /* =========================
+           الأيقونة
+        ========================= */
+
+        .service-icon {
+            width: 110px;
+            height: 110px;
+
+            margin: 5px auto 20px;
+
+            border-radius: 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eff6ff;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 15px
+                rgba(0, 0, 0, 0.08);
+        }
+
+        .service-icon span {
+            font-size: 55px;
+        }
+
+        /* =========================
+           صورة الإنجليزي
+        ========================= */
+
+        .english-image {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        /* =========================
+           التربية العسكرية
+        ========================= */
+
+        .military-icon {
+            background:
+                linear-gradient(
+                    135deg,
+                    #263b20,
+                    #667c3b
+                );
+
+            color: white;
+            font-size: 55px;
+        }
+
+        /* =========================
+           واتساب
+        ========================= */
+
+        .whatsapp-icon {
+            background:
+                linear-gradient(
+                    135deg,
+                    #25D366,
+                    #128C7E
+                );
+
+            color: white;
+            font-size: 52px;
+
+            box-shadow:
+                0 8px 20px
+                rgba(37, 211, 102, 0.25);
+        }
+
+        /* =========================
+           عنوان الخدمة
+        ========================= */
+
+        .service-card h3 {
+            font-size: 21px;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        /* =========================
+           الوصف
+        ========================= */
+
+        .service-card p {
+            color: #6b7280;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+            min-height: 105px;
+
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           أزرار الخدمة
+        ========================= */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .service-button {
+            display: inline-block;
+
+            padding: 11px 18px;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .service-button:hover {
+            transform: translateY(-2px) scale(1.03);
+        }
+
+        /* زر واتساب */
+
+        .whatsapp-button {
+            background: #25D366;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+        }
+
+        /* زر التفاصيل */
+
+        .details-button {
+            background: #2563eb;
+        }
+
+        .details-button:hover {
+            background: #1d4ed8;
+        }
+
+        /* =========================
+           Footer
+        ========================= */
+
+        footer {
+            background: #111827;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        /* =========================
+           الموبايل
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            .page-title h2 {
+                font-size: 25px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card p {
+                min-height: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <h1>
+            Student Pro
+        </h1>
+
+        <p>
+            الخدمات الجامعية
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         زر العودة
+    ========================= -->
+
+    <a
+        href="index.html"
+        class="back-button"
+    >
+        ← العودة إلى الرئيسية
+    </a>
+
+
+    <!-- =========================
+         عنوان الصفحة
+    ========================= -->
+
+    <section class="page-title">
+
+        <h2>
+            🎓 الخدمات الجامعية
+        </h2>
+
+        <p>
+            خدمات أكاديمية متكاملة تساعدك على إنجاز
+            مهامك الجامعية بصورة منظمة واحترافية.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         الخدمات
+    ========================= -->
+
+    <main class="services">
+
+
+        <!-- ==========================
+             الأبحاث الجامعية
+        =========================== -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+
+                <span>
+                    📝
+                </span>
+
+            </div>
+
+            <h3>
+                إعداد الأبحاث الجامعية
+            </h3>
+
+            <p>
+                إعداد وتنسيق الأبحاث الجامعية والأكاديمية
+                باستخدام Word وPowerPoint، مع تنظيم
+                المحتوى والعناوين والمراجع وإخراج احترافي
+                جاهز للتقديم.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://wa.me/201554725979?text=أريد%20طلب%20خدمة%20إعداد%20الأبحاث%20الجامعية"
+                    class="service-button whatsapp-button"
+                    target="_blank"
+                >
+                    💬 اطلب الخدمة
+                </a>
+
+                <a
+    href="research-details.html"
+    class="service-button details-button"
+>
+    👁️ التفاصيل
+</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================
+             كورس اللغة الإنجليزية
+        =========================== -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+
+                <img
+                    src="english-course.png.png"
+                    alt="English Course"
+                    class="english-image"
+                >
+
+            </div>
+
+            <h3>
+                كورس اللغة الإنجليزية
+            </h3>
+
+            <p>
+                المساعدة في إنجاز تدريبات ومهام كورس
+                اللغة الإنجليزية عبر Student Zone،
+                مع تقديم العمل بصورة منظمة وواضحة.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://wa.me/201554725979?text=أريد%20حل%20منصة%20Student%20Zone"
+                    class="service-button whatsapp-button"
+                    target="_blank"
+                >
+                    💬 اطلب الخدمة
+                </a>
+
+                <!-- زر التفاصيل مربوط بالصفحة -->
+
+                <a
+                    href="english-details.html"
+                    class="service-button details-button"
+                >
+                    👁️ التفاصيل
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================
+             التربية العسكرية
+        =========================== -->
+
+        <div class="service-card">
+
+            <div class="service-icon military-icon">
+
+                🎖️
+
+            </div>
+
+            <h3>
+                أبحاث التربية العسكرية
+            </h3>
+
+            <p>
+                إعداد وتنسيق أبحاث التربية العسكرية
+                وفق المتطلبات المطلوبة، مع تنظيم
+                المحتوى وإخراج احترافي مناسب للتقديم.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://wa.me/201554725979?text=أريد%20طلب%20خدمة%20بحث%20التربية%20العسكرية"
+                    class="service-button whatsapp-button"
+                    target="_blank"
+                >
+                    💬 اطلب الخدمة
+                </a>
+
+                <a
+                    href="#"
+                    class="service-button details-button"
+                >
+                    👁️ التفاصيل
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================
+             البروشورات
+        =========================== -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+
+                <span>
+                    📖
+                </span>
+
+            </div>
+
+            <h3>
+                تصميم البروشورات الجامعية
+            </h3>
+
+            <p>
+                تصميم بروشورات تعليمية وجامعية جذابة
+                تجمع بين المحتوى المنظم والتصميم
+                الاحترافي وسهولة القراءة.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://wa.me/201554725979?text=أريد%20طلب%20خدمة%20تصميم%20بروشور%20جامعي"
+                    class="service-button whatsapp-button"
+                    target="_blank"
+                >
+                    💬 اطلب الخدمة
+                </a>
+
+                <a
+                    href="#"
+                    class="service-button details-button"
+                >
+                    👁️ التفاصيل
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================
+             جروب الواتساب
+        =========================== -->
+
+        <div class="service-card">
+
+            <div class="service-icon whatsapp-icon">
+
+                💬
+
+            </div>
+
+            <h3>
+                الانضمام إلى جروب الواتساب
+            </h3>
+
+            <p>
+                انضم إلى جروب Student Pro على واتساب
+                لمتابعة الخدمات الجديدة والعروض
+                وآخر التحديثات والإعلانات.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://chat.whatsapp.com/IGLhu3G0aN5Hp5sC7itqlg?s=sw&p=a&mlu=4"
+                    class="service-button whatsapp-button"
+                    target="_blank"
+                >
+                    💬 انضم إلى الجروب
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================
+         Footer
+    ========================= -->
+
+    <footer>
+
+        © 2026 Student Pro
+
+        <br>
+
+        جميع الحقوق محفوظة
+
+    </footer>
+
+
+</body>
+
+</html>

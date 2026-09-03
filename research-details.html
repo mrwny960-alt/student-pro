@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إعداد الأبحاث الجامعية | Student Pro</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+
+        /* Header */
+
+        header {
+            background: linear-gradient(135deg, #123c69, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        header h1 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+            opacity: 0.9;
+        }
+
+
+        /* Back */
+
+        .back {
+            display: inline-block;
+            margin: 25px;
+            padding: 11px 20px;
+            background: white;
+            color: #2563eb;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .back:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+
+        /* Main */
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto 50px;
+            padding: 20px;
+        }
+
+        .service-box {
+            background: white;
+            border-radius: 25px;
+            padding: 45px 30px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+
+        /* Icon */
+
+        .service-image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 25px;
+            border-radius: 28px;
+            background: #eff6ff;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 75px;
+        }
+
+
+        /* Title */
+
+        .service-box h2 {
+            color: #123c69;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+
+        /* Description */
+
+        .description {
+            max-width: 700px;
+            margin: auto;
+            color: #4b5563;
+            font-size: 19px;
+            line-height: 2;
+        }
+
+
+        /* Main Service */
+
+        .main-service {
+            margin: 35px auto 25px;
+            padding: 25px;
+            max-width: 700px;
+            background: #eff6ff;
+            border-radius: 18px;
+            border-right: 5px solid #2563eb;
+            text-align: right;
+        }
+
+        .main-service h3 {
+            color: #123c69;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        .main-service ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .main-service li {
+            color: #374151;
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 8px;
+        }
+
+        .main-service li::before {
+            content: "✓";
+            color: #2563eb;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+
+        /* Portfolio */
+
+        .portfolio {
+            max-width: 700px;
+            margin: 40px auto 0;
+        }
+
+        .portfolio h3 {
+            color: #123c69;
+            font-size: 26px;
+            margin-bottom: 22px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 18px;
+            padding: 8px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(37,99,235,0.18);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            display: block;
+            border-radius: 13px;
+        }
+
+        .portfolio-title {
+            padding: 13px 5px 9px;
+            color: #374151;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+
+        /* Buttons */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 27px;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .whatsapp:hover {
+            background: #128C7E;
+        }
+
+        .group {
+            background: #16a34a;
+        }
+
+        .group:hover {
+            background: #15803d;
+        }
+
+
+        /* Footer */
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .service-box {
+                padding: 35px 20px;
+            }
+
+            .service-box h2 {
+                font-size: 26px;
+            }
+
+            .description {
+                font-size: 17px;
+            }
+
+            .main-service h3 {
+                font-size: 21px;
+            }
+
+            .main-service li {
+                font-size: 16px;
+            }
+
+
+            /* Portfolio Mobile */
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-item img {
+                height: auto;
+                max-height: 550px;
+                object-fit: contain;
+            }
+
+            .portfolio h3 {
+                font-size: 23px;
+            }
+
+
+            /* Buttons Mobile */
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 90%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            Student Pro
+        </h1>
+
+        <p>
+            تفاصيل خدمة إعداد الأبحاث الجامعية
+        </p>
+
+    </header>
+
+
+    <!-- Back -->
+
+    <a
+        href="university.html"
+        class="back"
+    >
+        ← العودة إلى الخدمات الجامعية
+    </a>
+
+
+    <!-- Service -->
+
+    <main class="container">
+
+        <div class="service-box">
+
+
+            <!-- أيقونة الأبحاث -->
+
+            <div class="service-image">
+
+                📝
+
+            </div>
+
+
+            <!-- العنوان -->
+
+            <h2>
+
+                📝 إعداد الأبحاث الجامعية
+
+            </h2>
+
+
+            <!-- الوصف -->
+
+            <p class="description">
+
+                خدمة متخصصة في إعداد وتنسيق الأبحاث الجامعية
+                بصورة احترافية ومنظمة، مع الاهتمام بالمحتوى
+                والتنسيق والمراجعة قبل التسليم.
+
+            </p>
+
+
+            <!-- خدمة Word -->
+
+            <div class="main-service">
+
+                <h3>
+
+                    📝 خدمة Word
+
+                </h3>
+
+                <ul>
+
+                    <li>
+                        إعداد جميع الأبحاث الجامعية.
+                    </li>
+
+                    <li>
+                        تنسيق احترافي ومتناسق.
+                    </li>
+
+                    <li>
+                        تنظيم العناوين والفقرات والمراجع.
+                    </li>
+
+                    <li>
+                        مراجعة الأخطاء الإملائية واللغوية قبل التسليم.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- خدمة PowerPoint -->
+
+            <div class="main-service">
+
+                <h3>
+
+                    📊 خدمة PowerPoint
+
+                </h3>
+
+                <ul>
+
+                    <li>
+                        تحويل وإعداد الأبحاث في صورة عروض تقديمية.
+                    </li>
+
+                    <li>
+                        تصميم شرائح احترافي ومتناسق.
+                    </li>
+
+                    <li>
+                        تنظيم المحتوى بطريقة سهلة للعرض.
+                    </li>
+
+                    <li>
+                        مراجعة المحتوى والتنسيق قبل التسليم.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- معرض الأعمال -->
+
+            <div class="portfolio">
+
+                <h3>
+
+                    🖼️ معرض الأعمال
+
+                </h3>
+
+
+                <div class="portfolio-grid">
+
+
+                    <!-- العمل الأول -->
+
+                    <div class="portfolio-item">
+
+                        <img
+                            src="work2 (1).png"
+                            alt="نموذج من أعمال الأبحاث الجامعية"
+                        >
+
+                        <div class="portfolio-title">
+
+                            📄 نموذج من أعمالنا
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- العمل الثاني -->
+
+                    <div class="portfolio-item">
+
+                        <img
+                            src="work2 (2).png"
+                            alt="نموذج من أعمال الأبحاث الجامعية"
+                        >
+
+                        <div class="portfolio-title">
+
+                            📊 نموذج من أعمالنا
+
+                        </div>
+
+                    </div>
+
+<!-- العمل الثالث -->
+
+                    <div class="portfolio-item">
+
+                        <img
+                            src="work2 (3).png"
+                            alt="نموذج من أعمال الأبحاث الجامعية"
+                        >
+
+                        <div class="portfolio-title">
+
+                            📄 نموذج من أعمالنا
+
+                        </div>
+                    </div>
+                    <!-- العمل الرابع -->
+
+                    <div class="portfolio-item">
+
+                        <img
+                            src="work2 (4).png"
+                            alt="نموذج من أعمال الأبحاث الجامعية"
+                        >
+
+                        <div class="portfolio-title">
+
+                            📄 نموذج من أعمالنا
+
+                        </div>
+                    </div>
+                    <!-- العمل الخامس -->
+
+                    <div class="portfolio-item">
+
+                        <img
+                            src="work2 (5).png"
+                            alt="نموذج من أعمال الأبحاث الجامعية"
+                        >
+
+                        <div class="portfolio-title">
+
+                            📄 نموذج من أعمالنا
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- الأزرار -->
+
+            <div class="buttons">
+
+
+                <!-- طلب الخدمة -->
+
+                <a
+                    href="https://wa.me/201554725979?text=أريد%20طلب%20خدمة%20إعداد%20الأبحاث%20الجامعية"
+                    class="button whatsapp"
+                    target="_blank"
+                >
+
+                    💬 اطلب الخدمة
+
+                </a>
+
+
+                <!-- جروب الواتساب -->
+
+                <a
+                    href="https://chat.whatsapp.com/IGLhu3G0aN5Hp5sC7itqlg"
+                    class="button group"
+                    target="_blank"
+                >
+
+                    👥 الانضمام إلى جروب الواتساب
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2026 Student Pro
+
+        <br>
+
+        جميع الحقوق محفوظة
+
+    </footer>
+
+
+</body>
+
+</html>
