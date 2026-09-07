@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تفاصيل التقديم لكلية الشرطة | Student Pro</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,"Segoe UI",sans-serif}
+html{scroll-behavior:smooth}
+body{background:#f4f7fb;color:#1f2937;line-height:1.8}
+
+nav{
+    background:linear-gradient(135deg,#123c69,#0f766e);
+    color:#fff;padding:15px 6%;display:flex;align-items:center;
+    justify-content:space-between;position:sticky;top:0;z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,.12)
+}
+.logo{font-size:25px;font-weight:bold}
+.back-btn{
+    color:#fff;text-decoration:none;background:rgba(255,255,255,.15);
+    padding:9px 18px;border-radius:10px;transition:.3s
+}
+.back-btn:hover{background:rgba(255,255,255,.25);transform:translateY(-2px)}
+
+.hero{
+    background:linear-gradient(135deg,#123c69,#0f766e);
+    color:#fff;text-align:center;padding:55px 20px 65px;
+    position:relative;overflow:hidden
+}
+.hero:before,.hero:after{
+    content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.07)
+}
+.hero:before{width:300px;height:300px;top:-170px;right:-80px}
+.hero:after{width:250px;height:250px;bottom:-160px;left:-80px}
+.hero-content{position:relative;z-index:2;max-width:900px;margin:auto}
+.hero-icon{font-size:65px;margin-bottom:10px}
+.hero h1{font-size:40px;margin-bottom:10px}
+.hero p{font-size:18px;opacity:.93}
+
+.container{max-width:1100px;margin:auto;padding:40px 20px 70px}
+
+.notice,.step{
+    background:#fff;border-radius:22px;padding:25px;
+    margin-bottom:25px;box-shadow:0 8px 28px rgba(0,0,0,.07)
+}
+.notice{border-right:6px solid #0f766e}
+.notice h2{color:#123c69;margin-bottom:10px;font-size:24px}
+.notice p{color:#6b7280}
+.notice strong{color:#dc2626}
+
+.steps{display:flex;flex-direction:column;gap:0}
+.step{border:1px solid #e5e7eb;position:relative;overflow:hidden}
+.step:before{
+    content:"";position:absolute;top:0;right:0;width:100%;height:5px;
+    background:linear-gradient(90deg,#0f766e,#2dd4bf)
+}
+.step-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+.step-number{
+    min-width:55px;height:55px;border-radius:17px;display:flex;
+    align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#0f766e,#123c69);
+    color:#fff;font-size:23px;font-weight:bold
+}
+.step-title{font-size:24px;color:#111827}
+.step-subtitle{color:#6b7280;font-size:14px}
+.step p{color:#374151}
+
+.documents{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:13px;margin-top:15px
+}
+.document{
+    background:#f8fafc;border:1px solid #e5e7eb;border-radius:14px;
+    padding:13px 16px;display:flex;align-items:flex-start;gap:10px;
+    transition:.25s
+}
+.document:hover{background:#f0fdfa;border-color:#99f6e4}
+.document-icon{font-size:20px;flex-shrink:0}
+.document-text{color:#374151;font-size:15px}
+.document-text strong{color:#111827}
+
+.sub-title{margin-top:25px;margin-bottom:10px;font-size:19px;color:#123c69}
+
+.tests{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:15px;margin-top:20px
+}
+.test{
+    background:#fff;border:1px solid #e5e7eb;border-radius:18px;
+    padding:22px;text-align:center;box-shadow:0 5px 18px rgba(0,0,0,.05);
+    transition:.3s
+}
+.test:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.09)}
+.test-icon{
+    width:65px;height:65px;margin:0 auto 12px;border-radius:18px;
+    background:#f0fdfa;display:flex;align-items:center;justify-content:center;
+    font-size:32px
+}
+.test h3{font-size:18px;margin-bottom:7px;color:#111827}
+.test p{color:#6b7280;font-size:14px}
+
+.timeline{margin-top:25px;position:relative}
+.timeline:before{
+    content:"";position:absolute;right:27px;top:0;bottom:0;width:3px;
+    background:#ccfbf1
+}
+.timeline-item{position:relative;padding-right:65px;margin-bottom:25px}
+.timeline-number{
+    position:absolute;right:5px;top:0;width:47px;height:47px;border-radius:50%;
+    background:#0f766e;color:#fff;display:flex;align-items:center;
+    justify-content:center;font-weight:bold;z-index:2;border:5px solid #ecfdf5
+}
+.timeline-content{
+    background:#f8fafc;border:1px solid #e5e7eb;border-radius:16px;padding:17px 20px
+}
+.timeline-content h3{color:#123c69;margin-bottom:5px;font-size:18px}
+.timeline-content p{color:#6b7280;font-size:14px}
+
+.checklist{
+    margin-top:20px;background:#f0fdf4;border:1px solid #bbf7d0;
+    border-radius:18px;padding:22px
+}
+.checklist h3{color:#166534;margin-bottom:12px}
+.checklist ul{list-style:none}
+.checklist li{padding:7px 0;color:#374151}
+.checklist li:before{content:"✓";color:#16a34a;font-weight:bold;margin-left:8px}
+
+.warning{
+    margin-top:20px;background:#fff7ed;border:1px solid #fed7aa;
+    border-radius:18px;padding:20px
+}
+.warning h3{color:#c2410c;margin-bottom:8px}
+.warning p{color:#7c2d12;font-size:14px}
+
+.official{text-align:center;margin-top:35px}
+.official a{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:#0f766e;color:#fff;text-decoration:none;padding:14px 25px;
+    border-radius:13px;font-weight:bold;transition:.3s
+}
+.official a:hover{background:#0d5f59;transform:translateY(-3px);box-shadow:0 8px 20px rgba(15,118,110,.25)}
+
+footer{background:#111827;color:#fff;text-align:center;padding:25px 20px}
+footer h3{margin-bottom:5px}
+footer p{color:rgba(255,255,255,.7);font-size:14px}
+
+@media(max-width:600px){
+    .logo{font-size:21px}
+    .hero{padding:45px 18px 55px}
+    .hero h1{font-size:29px}
+    .hero p{font-size:15px}
+    .container{padding:25px 15px 50px}
+    .step{padding:25px 18px}
+    .step-header{align-items:flex-start}
+    .step-title{font-size:20px}
+    .documents,.tests{grid-template-columns:1fr}
+}
+
+@media print{
+    nav,.official,footer{display:none}
+    body{background:#fff}
+    .step{box-shadow:none;break-inside:avoid}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Student Pro</div>
+
+    <a href="university.html"
+       class="back-btn"
+       onclick="if(window.history.length>1){window.history.back();return false;}">
+        ← الرجوع للخدمات
+    </a>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-icon">👮</div>
+        <h1>التقديم لكلية الشرطة</h1>
+        <p>دليل مرتب لمراحل التقديم والأوراق والاختبارات والإجراءات</p>
+    </div>
+</section>
+
+<main class="container">
+
+<div class="notice">
+    <h2>⚠️ تنبيه مهم</h2>
+    <p>
+        هذه الصفحة عبارة عن <strong>دليل تنظيمي</strong> يساعد الطالب على فهم خطوات التقديم.
+        شروط القبول والمواعيد والمستندات النهائية قد تختلف من دفعة لأخرى، لذلك يجب مراجعة
+        <strong>منظومة القبول الرسمية لأكاديمية الشرطة</strong> عند فتح باب التقديم.
+    </p>
+</div>
+
+<div class="steps">
+
+<section class="step">
+    <div class="step-header">
+        <div class="step-number">1</div>
+        <div>
+            <h2 class="step-title">التقديم الإلكتروني</h2>
+            <div class="step-subtitle">بداية إجراءات الالتحاق</div>
+        </div>
+    </div>
+
+    <p>
+        تبدأ إجراءات التقديم من خلال منظومة القبول الإلكتروني التابعة لأكاديمية الشرطة.
+        يقوم المتقدم بقراءة التعليمات واختيار نوع المؤهل أو الفئة المتاحة له وفق الإعلان
+        الرسمي للدفعة، ثم إدخال البيانات المطلوبة بدقة.
+    </p>
+
+    <div class="documents">
+        <div class="document"><span class="document-icon">🪪</span><span class="document-text"><strong>بيانات الرقم القومي</strong><br>إدخال البيانات كما هي في المستندات الرسمية.</span></div>
+        <div class="document"><span class="document-icon">🎓</span><span class="document-text"><strong>بيانات المؤهل</strong><br>طبقًا لنوع الشهادة والفئة المعلن عنها.</span></div>
+        <div class="document"><span class="document-icon">📱</span><span class="document-text"><strong>رقم هاتف صحيح</strong><br>للمتابعة والتواصل عند الحاجة.</span></div>
+        <div class="document"><span class="document-icon">🖨️</span><span class="document-text"><strong>طباعة المستندات</strong><br>طباعة ما تطلبه المنظومة بعد إتمام التسجيل.</span></div>
+    </div>
+</section>
+
+<section class="step">
+    <div class="step-header">
+        <div class="step-number">2</div>
+        <div>
+            <h2 class="step-title">مراجعة شروط القبول</h2>
+            <div class="step-subtitle">قبل استكمال الإجراءات</div>
+        </div>
+    </div>
+
+    <p>
+        قبل التقديم النهائي، يجب قراءة إعلان القبول الخاص بالعام الحالي والتأكد من
+        انطباق الشروط على المتقدم، لأن تفاصيل السن والمجموع والمؤهل والاختبارات
+        والمواعيد تحددها الأكاديمية في الإعلان الرسمي لكل دفعة.
+    </p>
+
+    <div class="checklist">
+        <h3>✅ راجع هذه النقاط</h3>
+        <ul>
+            <li>نوع المؤهل المطلوب في الإعلان.</li>
+            <li>الحد الأدنى للمجموع أو التقدير إذا تم تحديده.</li>
+            <li>السن في التاريخ المحدد بالإعلان.</li>
+            <li>الشروط الخاصة بكل فئة من فئات المتقدمين.</li>
+            <li>مواعيد التقديم والاختبارات.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="step">
+    <div class="step-header">
+        <div class="step-number">3</div>
+        <div>
+            <h2 class="step-title">تجهيز الأوراق والمستندات</h2>
+            <div class="step-subtitle">تجهيز الملف حسب التعليمات الرسمية</div>
+        </div>
+    </div>
+
+    <p>
+        بعد التسجيل، يتم تجهيز المستندات المطلوبة طبقًا للقائمة التي تحددها أكاديمية
+        الشرطة في إعلان الدفعة. لا تعتمد على قوائم قديمة لأن بعض التفاصيل قد تتغير.
+    </p>
+
+    <div class="documents">
+        <div class="document"><span class="document-icon">📄</span><span class="document-text"><strong>شهادة الميلاد</strong><br>وفق المواصفات المطلوبة في الإعلان.</span></div>
+        <div class="document"><span class="document-icon">🪪</span><span class="document-text"><strong>بطاقة الرقم القومي</strong><br>للطالب وفق المستندات المطلوبة.</span></div>
+        <div class="document"><span class="document-icon">📸</span><span class="document-text"><strong>صور شخصية</strong><br>بالمقاس والمواصفات التي تحددها الأكاديمية.</span></div>
+        <div class="document"><span class="document-icon">🎓</span><span class="document-text"><strong>مستندات المؤهل</strong><br>حسب نوع الشهادة والفئة.</span></div>
+        <div class="document"><span class="document-icon">📋</span><span class="document-text"><strong>مستندات إضافية</strong><br>أي أوراق أخرى يطلبها ملف التقديم.</span></div>
+        <div class="document"><span class="document-icon">🖨️</span><span class="document-text"><strong>استمارات التقديم</strong><br>طباعة النماذج المطلوبة والاحتفاظ بها.</span></div>
+    </div>
+
+    <div class="warning">
+        <h3>⚠️ مهم جدًا</h3>
+        <p>
+            القائمة النهائية للمستندات لا تعتمد من هذه الصفحة؛ المرجع هو تعليمات
+            أكاديمية الشرطة الخاصة بالدفعة التي يتم التقديم لها.
+        </p>
+    </div>
+</section>
+
+<section class="step">
+    <div class="step-header">
+        <div class="step-number">4</div>
+        <div>
+            <h2 class="step-title">تحديد موعد وإجراءات الحضور</h2>
+            <div class="step-subtitle">متابعة الموعد من المنظومة الرسمية</div>
+        </div>
+    </div>
+
+    <p>
+        بعد التسجيل الإلكتروني، تتم متابعة التعليمات والمواعيد التي تظهر للمتقدم
+        من خلال منظومة القبول. يجب الالتزام بالموعد والمكان المحددين وإحضار
+        المستندات المطلوبة.
+    </p>
+
+    <div class="checklist">
+        <h3>✅ قبل الحضور</h3>
+        <ul>
+            <li>راجع الموعد والمكان أكثر من مرة.</li>
+            <li>جهز جميع الأوراق المطلوبة.</li>
+            <li>احتفظ بنسخ المستندات التي تطلبها المنظومة.</li>
+            <li>التزم بتعليمات الحضور والمظهر.</li>
+            <li>لا تعتمد على مواعيد منشورة في صفحات غير رسمية.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="step">
+    <div class="step-header">
+        <div class="step-number">5</div>
+        <div>
+            <h2 class="step-title">الاختبارات</h2>
+            <div class="step-subtitle">مراحل التقييم حسب تعليمات الأكاديمية</div>
+        </div>
+    </div>
+
+    <p>
+        يمر المتقدم بمراحل تقييم واختبارات تحددها الأكاديمية وفق نظام القبول
+        المعتمد للدفعة. وقد تشمل مراحل طبية وبدنية ونفسية وشخصية وغيرها بحسب
+        الفئة واللوائح والتعليمات الرسمية.
+    </p>
+
+    <div class="tests">
+        <div class="test">
+            <div class="test-icon">🩺</div>
+            <h3>الاختبارات الطبية</h3>
+            <p>فحوصات لتقييم الحالة الطبية وفق المعايير المحددة للقبول.</p>
+        </div>
+
+        <div class="test">
+            <div class="test-icon">🏃</div>
+            <h3>اختبارات اللياقة</h3>
+            <p>تقييم مستوى اللياقة البدنية وفق الاختبارات المعتمدة.</p>
+        </div>
+
+        <div class="test">
+            <div class="test-icon">🧠</div>
+            <h3>الاختبارات النفسية</h3>
+            <p>تقييم الجوانب النفسية والقدرة على التعامل مع المواقف المختلفة.</p>
+        </div>
+
+        <div class="test">
+            <div class="test-icon">👤</div>
+            <h3>الاختبار الشخصي</h3>
+            <p>تقييم الشخصية والمظهر والثقافة ومدى ملاءمة المتقدم.</p>
+        </div>
+
+        <div class="test">
+            <div class="test-icon">📚</div>
+            <h3>اختبارات معرفية</h3>
+            <p>قد تتضمن معلومات عامة أو اختبارات أخرى حسب الإعلان.</p>
+        </div>
+
+        <div class="test">
+            <div class="test-icon">📋</div>
+            <h3>مراحل إضافية</h3>
+            <p>أي اختبارات أو فحوص أخرى تحددها الأكاديمية للدفعة.</p>
+        </div>
+    </div>
+</section>
+
+<section class="step">
+    <div class="step-header">
+        <div class="step-number">6</div>
+        <div>
+            <h2 class="step-title">ترتيب الإجراءات بالكامل</h2>
+            <div class="step-subtitle">صورة مبسطة للمراحل</div>
+        </div>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-number">1</div>
+            <div class="timeline-content">
+                <h3>قراءة إعلان القبول</h3>
+                <p>التأكد من الشروط والفئة والمواعيد الخاصة بالدفعة.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-number">2</div>
+            <div class="timeline-content">
+                <h3>التسجيل الإلكتروني</h3>
+                <p>إدخال بيانات المتقدم من خلال منظومة القبول الرسمية.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-number">3</div>
+            <div class="timeline-content">
+                <h3>متابعة الموعد</h3>
+                <p>معرفة التعليمات والمواعيد التي تحددها المنظومة.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-number">4</div>
+            <div class="timeline-content">
+                <h3>تجهيز الملف</h3>
+                <p>استكمال المستندات والنماذج المطلوبة.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-number">5</div>
+            <div class="timeline-content">
+                <h3>الاختبارات والفحوص</h3>
+                <p>اجتياز المراحل التي تحددها الأكاديمية للمتقدم.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-number">6</div>
+            <div class="timeline-content">
+                <h3>المراحل النهائية</h3>
+                <p>استكمال الإجراءات النهائية وفق التعليمات الرسمية.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="step">
+    <div class="step-header">
+        <div class="step-number">✓</div>
+        <div>
+            <h2 class="step-title">نصائح مهمة للمتقدم</h2>
+            <div class="step-subtitle">لتجنب الأخطاء أثناء التقديم</div>
+        </div>
+    </div>
+
+    <div class="checklist">
+        <ul>
+            <li>اكتب بياناتك بدقة وراجعها قبل الإرسال.</li>
+            <li>احتفظ ببيانات التسجيل والنماذج التي تطبعها.</li>
+            <li>تابع المنظومة الرسمية باستمرار خلال فترة التقديم.</li>
+            <li>لا تعتمد على منشورات قديمة في معرفة الشروط أو المواعيد.</li>
+            <li>لا تدفع أموالًا لأي شخص يدعي أنه يستطيع ضمان القبول.</li>
+            <li>التزم بالتعليمات الرسمية في كل مرحلة.</li>
+        </ul>
+    </div>
+
+    <div class="warning">
+        <h3>🚨 تحذير</h3>
+        <p>
+            إجراءات القبول تتم من خلال الجهات الرسمية. تجنب أي شخص يدعي قدرته
+            على ضمان القبول أو إنهاء الإجراءات مقابل أموال.
+        </p>
+    </div>
+</section>
+
+</div>
+
+<div class="official">
+    <a href="https://academy.moi.gov.eg/" target="_blank" rel="noopener">
+        🌐 منظومة القبول الرسمية لأكاديمية الشرطة
+    </a>
+</div>
+
+</main>
+
+<footer>
+    <h3>Student Pro</h3>
+    <p>خدمات طلابية وإلكترونية في مكان واحد © 2026</p>
+</footer>
+
+</body>
+</html>
