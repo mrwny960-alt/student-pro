@@ -1,465 +1,1025 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>أبحاث التربية العسكرية | Student Pro</title>
+<meta charset="UTF-8">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: Arial, Tahoma, sans-serif;
-            background: linear-gradient(135deg, #eef5ff, #f8fbff);
-            color: #1f2937;
-            line-height: 1.8;
-        }
+<title>تفاصيل التقديم للكلية الحربية | Student Pro</title>
 
-        /* ===== Header ===== */
+<style>
 
-        header {
-            background: linear-gradient(135deg, #123c69, #2563eb);
-            color: white;
-            padding: 28px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,"Segoe UI",sans-serif;
+}
 
-        header::before,
-        header::after {
-            content: "";
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.08);
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        header::before {
-            top: -90px;
-            right: -50px;
-        }
+body{
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.8;
+}
 
-        header::after {
-            bottom: -110px;
-            left: -50px;
-        }
+/* =========================
+   NAVBAR
+========================= */
 
-        header h1 {
-            font-size: 32px;
-            margin-bottom: 5px;
-            position: relative;
-            z-index: 2;
-        }
+nav{
 
-        header p {
-            font-size: 16px;
-            opacity: 0.9;
-            position: relative;
-            z-index: 2;
-        }
+    background:
+    linear-gradient(
+        135deg,
+        #123c69,
+        #2563eb
+    );
 
-        /* ===== Container ===== */
+    color:white;
 
-        .container {
-            width: 92%;
-            max-width: 1000px;
-            margin: 35px auto;
-        }
+    padding:15px 6%;
 
-        /* ===== Back Button ===== */
+    display:flex;
 
-        .back {
-            display: inline-block;
-            text-decoration: none;
-            background: white;
-            color: #123c69;
-            padding: 11px 20px;
-            border-radius: 12px;
-            font-weight: bold;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
-            transition: 0.3s;
-        }
+    align-items:center;
 
-        .back:hover {
-            transform: translateY(-3px);
-            background: #123c69;
-            color: white;
-        }
+    justify-content:space-between;
 
-        /* ===== Main Card ===== */
+    position:sticky;
 
-        .main-card {
-            background: white;
-            border-radius: 25px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 35px rgba(18,60,105,0.12);
-            text-align: center;
-        }
+    top:0;
 
-        .icon {
-            width: 95px;
-            height: 95px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #123c69, #2563eb);
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            box-shadow: 0 10px 25px rgba(37,99,235,0.25);
-        }
+    z-index:1000;
 
-        .main-card h2 {
-            color: #123c69;
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.12);
+}
 
-        .description {
-            max-width: 750px;
-            margin: auto;
-            color: #64748b;
-            font-size: 17px;
-        }
+.logo{
 
-        /* ===== Section ===== */
+    font-size:25px;
 
-        .section {
-            margin-top: 35px;
-            text-align: right;
-        }
+    font-weight:bold;
 
-        .section-title {
-            color: #123c69;
-            font-size: 23px;
-            margin-bottom: 18px;
-            border-right: 5px solid #2563eb;
-            padding-right: 12px;
-        }
+}
 
-        /* ===== Features ===== */
+.back-btn{
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
+    color:white;
 
-        .feature {
-            background: #f8fbff;
-            border: 1px solid #e4edfa;
-            border-radius: 18px;
-            padding: 22px;
-            transition: 0.3s;
-        }
+    text-decoration:none;
 
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 22px rgba(37,99,235,0.12);
-        }
+    background:
+    rgba(255,255,255,.15);
 
-        .feature h3 {
-            color: #123c69;
-            font-size: 18px;
-            margin-bottom: 7px;
-        }
+    padding:9px 18px;
 
-        .feature p {
-            color: #64748b;
-            font-size: 15px;
-        }
+    border-radius:10px;
 
-        /* ===== Steps ===== */
+    transition:.3s;
 
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
+}
 
-        .step {
-            text-align: center;
-            background: #f8fbff;
-            border-radius: 18px;
-            padding: 25px 15px;
-            border: 1px solid #e4edfa;
-        }
+.back-btn:hover{
 
-        .step-number {
-            width: 45px;
-            height: 45px;
-            background: #2563eb;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 12px;
-            font-weight: bold;
-            font-size: 18px;
-        }
+    background:
+    rgba(255,255,255,.25);
 
-        .step h3 {
-            color: #123c69;
-            margin-bottom: 5px;
-        }
+    transform:translateY(-2px);
 
-        .step p {
-            color: #64748b;
-            font-size: 14px;
-        }
+}
 
-        /* ===== Note ===== */
+/* =========================
+   HERO
+========================= */
 
-        .note {
-            margin-top: 30px;
-            background: #eff6ff;
-            border-right: 5px solid #2563eb;
-            padding: 18px;
-            border-radius: 12px;
-            color: #334155;
-            text-align: right;
-        }
+.hero{
 
-        /* ===== Buttons ===== */
+    background:
+    linear-gradient(
+        135deg,
+        #123c69,
+        #2563eb
+    );
 
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 35px;
-        }
+    color:white;
 
-        .btn {
-            text-decoration: none;
-            padding: 14px 25px;
-            border-radius: 14px;
-            font-weight: bold;
-            font-size: 16px;
-            transition: 0.3s;
-            display: inline-block;
-        }
+    text-align:center;
 
-        .whatsapp {
-            background: #22c55e;
-            color: white;
-            box-shadow: 0 7px 20px rgba(34,197,94,0.25);
-        }
+    padding:55px 20px 65px;
 
-        .group {
-            background: #123c69;
-            color: white;
-            box-shadow: 0 7px 20px rgba(18,60,105,0.22);
-        }
+    position:relative;
 
-        .btn:hover {
-            transform: translateY(-3px);
-        }
+    overflow:hidden;
 
-        /* ===== Footer ===== */
+}
 
-        footer {
-            margin-top: 45px;
-            background: #123c69;
-            color: white;
-            text-align: center;
-            padding: 22px;
-            font-size: 14px;
-        }
+.hero::before{
 
-        /* ===== Mobile ===== */
+    content:"";
 
-        @media (max-width: 700px) {
+    position:absolute;
 
-            header h1 {
-                font-size: 26px;
-            }
+    width:300px;
 
-            .container {
-                width: 94%;
-                margin-top: 25px;
-            }
+    height:300px;
 
-            .main-card {
-                padding: 30px 18px;
-                border-radius: 20px;
-            }
+    border-radius:50%;
 
-            .main-card h2 {
-                font-size: 25px;
-            }
+    background:
+    rgba(255,255,255,.08);
 
-            .features {
-                grid-template-columns: 1fr;
-            }
+    top:-170px;
 
-            .steps {
-                grid-template-columns: 1fr;
-            }
+    right:-80px;
 
-            .buttons {
-                flex-direction: column;
-            }
+}
 
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.06);
+
+    bottom:-160px;
+
+    left:-80px;
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.hero-icon{
+
+    font-size:65px;
+
+    margin-bottom:10px;
+
+}
+
+.hero h1{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    opacity:.93;
+
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:40px 20px 70px;
+
+}
+
+/* =========================
+   IMPORTANT NOTICE
+========================= */
+
+.notice{
+
+    background:#fff;
+
+    border-right:6px solid #2563eb;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.06);
+
+}
+
+.notice h2{
+
+    color:#123c69;
+
+    margin-bottom:10px;
+
+    font-size:24px;
+
+}
+
+.notice p{
+
+    color:#6b7280;
+
+}
+
+.notice strong{
+
+    color:#dc2626;
+
+}
+
+/* =========================
+   STEPS
+========================= */
+
+.steps{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.step{
+
+    background:white;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 8px 28px rgba(0,0,0,.07);
+
+    transition:.3s;
+
+}
+
+.step::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    right:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+}
+
+.step:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 15px 35px
+    rgba(30,64,175,.12);
+
+}
+
+.step-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+.step-number{
+
+    min-width:55px;
+
+    height:55px;
+
+    border-radius:17px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #123c69
+    );
+
+    color:white;
+
+    font-size:23px;
+
+    font-weight:bold;
+
+}
+
+.step-title{
+
+    font-size:24px;
+
+    color:#111827;
+
+}
+
+.step-subtitle{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   DOCUMENT LIST
+========================= */
+
+.documents{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(270px,1fr));
+
+    gap:13px;
+
+    margin-top:15px;
+
+}
+
+.document{
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:14px;
+
+    padding:13px 16px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    transition:.25s;
+
+}
+
+.document:hover{
+
+    background:#eff6ff;
+
+    border-color:#bfdbfe;
+
+}
+
+.document-icon{
+
+    font-size:20px;
+
+    flex-shrink:0;
+
+}
+
+.document-text{
+
+    color:#374151;
+
+    font-size:15px;
+
+}
+
+.document-text strong{
+
+    color:#111827;
+
+}
+
+/* =========================
+   SUB TITLE
+========================= */
+
+.sub-title{
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+
+    font-size:19px;
+
+    color:#123c69;
+
+}
+
+/* =========================
+   TESTS
+========================= */
+
+.tests{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.test{
+
+    background:#fff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    text-align:center;
+
+    box-shadow:
+    0 5px 18px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+}
+
+.test:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 12px 28px
+    rgba(0,0,0,.09);
+
+}
+
+.test-icon{
+
+    width:65px;
+
+    height:65px;
+
+    margin:0 auto 12px;
+
+    border-radius:18px;
+
+    background:#eff6ff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:32px;
+
+}
+
+.test h3{
+
+    font-size:18px;
+
+    margin-bottom:7px;
+
+    color:#111827;
+
+}
+
+.test p{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+
+    margin-top:25px;
+
+    position:relative;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:27px;
+
+    top:0;
+
+    bottom:0;
+
+    width:3px;
+
+    background:#dbeafe;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    padding-right:65px;
+
+    margin-bottom:25px;
+
+}
+
+.timeline-number{
+
+    position:absolute;
+
+    right:5px;
+
+    top:0;
+
+    width:47px;
+
+    height:47px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:bold;
+
+    z-index:2;
+
+    border:5px solid #eff6ff;
+
+}
+
+.timeline-content{
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:16px;
+
+    padding:17px 20px;
+
+}
+
+.timeline-content h3{
+
+    color:#123c69;
+
+    margin-bottom:5px;
+
+    font-size:18px;
+
+}
+
+.timeline-content p{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    margin-top:20px;
+
+    background:#f0fdf4;
+
+    border:1px solid #bbf7d0;
+
+    border-radius:18px;
+
+    padding:22px;
+
+}
+
+.checklist h3{
+
+    color:#166534;
+
+    margin-bottom:12px;
+
+}
+
+.checklist ul{
+
+    list-style:none;
+
+}
+
+.checklist li{
+
+    padding:7px 0;
+
+    color:#374151;
+
+}
+
+.checklist li::before{
+
+    content:"✓";
+
+    color:#16a34a;
+
+    font-weight:bold;
+
+    margin-left:8px;
+
+}
+
+/* =========================
+   WARNING
+========================= */
+
+.warning{
+
+    margin-top:20px;
+
+    background:#fff7ed;
+
+    border:1px solid #fed7aa;
+
+    border-radius:18px;
+
+    padding:20px;
+
+}
+
+.warning h3{
+
+    color:#c2410c;
+
+    margin-bottom:8px;
+
+}
+
+.warning p{
+
+    color:#7c2d12;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   OFFICIAL BUTTON
+========================= */
+
+.official{
+
+    text-align:center;
+
+    margin-top:35px;
+
+}
+
+.official a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 25px;
+
+    border-radius:13px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.official a:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 8px 20px
+    rgba(37,99,235,.25);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px 20px;
+
+}
+
+footer h3{
+
+    margin-bottom:5px;
+
+}
+
+footer p{
+
+    color:
+    rgba(255,255,255,.7);
+
+    font-size:14px;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .logo{
+
+        font-size:21px;
+
+    }
+
+    .hero{
+
+        padding:
+        45px 18px 55px;
+
+    }
+
+    .hero h1{
+
+        font-size:29px;
+
+    }
+
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+    .container{
+
+        padding:
+        25px 15px 50px;
+
+    }
+
+    .step{
+
+        padding:
+        25px 18px;
+
+    }
+
+    .step-header{
+
+        align-items:flex-start;
+
+    }
+
+    .step-title{
+
+        font-size:20px;
+
+    }
+
+    .documents{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .tests{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* =========================
+   PRINT
+========================= */
+
+@media print{
+
+    nav,
+    .official,
+    footer{
+
+        display:none;
+
+    }
+
+    body{
+
+        background:white;
+
+    }
+
+    .step{
+
+        box-shadow:none;
+
+        break-inside:avoid;
+
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-    <!-- ===== Header ===== -->
 
-    <header>
-        <h1>Student Pro</h1>
-        <p>تفاصيل خدمة أبحاث التربية العسكرية</p>
-    </header>
+<!-- NAVBAR -->
 
+<nav>
 
-    <!-- ===== Main ===== -->
+    <div class="logo">
+        Student Pro
+    </div>
 
-    <div class="container">
+    <a
+        href="university.html"
+        class="back-btn"
+        onclick="if (window.history.length > 1) { window.history.back(); return false; }">
 
-        <a href="university.html" class="back">
-            ↩️ العودة للخدمات الجامعية
-        </a>
+        ← الرجوع للخدمات
 
+    </a>
 
-        <div class="main-card">
-
-            <div class="icon">
-                🎖️
-            </div>
-
-            <h2>أبحاث التربية العسكرية</h2>
-
-            <p class="description">
-                خدمة متخصصة لمساعدة الطلاب في إعداد وتجهيز أبحاث التربية العسكرية
-                بصورة منظمة ومرتبة، مع الاهتمام بتنسيق المحتوى وتجهيزه بالشكل المناسب.
-            </p>
+</nav>
 
 
-            <!-- ===== Services ===== -->
+<!-- HERO -->
 
-            <div class="section">
+<section class="hero">
 
-                <h2 class="section-title">
-                    🎯 ماذا نقدم لك؟
-                </h2>
+    <div class="hero-content">
 
-                <div class="features">
+        <div class="hero-icon">
+            🎖️
+        </div>
 
-                    <div class="feature">
-                        <h3>📚 إعداد البحث</h3>
-                        <p>
-                            إعداد البحث المطلوب بصورة منظمة ومرتبة حسب المطلوب.
-                        </p>
-                    </div>
+        <h1>
+            التقديم للكلية الحربية
+        </h1>
 
-                    <div class="feature">
-                        <h3>📝 تنسيق المحتوى</h3>
-                        <p>
-                            تنسيق العناوين والفقرات وترتيب محتويات البحث بشكل احترافي.
-                        </p>
-                    </div>
+        <p>
+            دليل مرتب لمراحل التقديم والأوراق والاختبارات
+        </p>
 
-                    <div class="feature">
-                        <h3>🔎 مراجعة البحث</h3>
-                        <p>
-                            مراجعة محتوى البحث والتأكد من ترتيب المعلومات قبل التسليم.
-                        </p>
-                    </div>
+    </div>
 
-                    <div class="feature">
-                        <h3>📄 تجهيز الملف</h3>
-                        <p>
-                            تجهيز البحث في ملف منظم وجاهز للطباعة أو التسليم.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
+</section>
 
 
-            <!-- ===== Steps ===== -->
-
-            <div class="section">
-
-                <h2 class="section-title">
-                    🚀 طريقة طلب الخدمة
-                </h2>
-
-                <div class="steps">
-
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h3>💬 تواصل معنا</h3>
-                        <p>
-                            اضغط على زر طلب الخدمة وتواصل معنا عبر واتساب.
-                        </p>
-                    </div>
-
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h3>📋 أرسل المطلوب</h3>
-                        <p>
-                            أرسل تفاصيل البحث والتعليمات المطلوبة منك.
-                        </p>
-                    </div>
-
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h3>✅ استلام الخدمة</h3>
-                        <p>
-                            يتم تجهيز العمل وتسليمه لك بصورة مرتبة.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
+<main class="container">
 
 
-            <!-- ===== Note ===== -->
+<!-- NOTICE -->
 
-            <div class="note">
-                💡 <strong>ملاحظة:</strong>
-                للحصول على الخدمة، تواصل معنا وأرسل تفاصيل المطلوب
-                قبل البدء في تجهيز البحث.
-            </div>
+<div class="notice">
+
+    <h2>
+        ⚠️ تنبيه مهم
+    </h2>
+
+    <p>
+
+        المعلومات الموجودة في هذه الصفحة هي
+        <strong>دليل تنظيمي</strong>
+        لمساعدة الطالب على تجهيز نفسه.
+
+        يجب دائمًا مراجعة
+        <strong>مكتب تنسيق القبول بالأكاديمية والكليات العسكرية</strong>
+        لمعرفة المستندات والمواعيد النهائية الخاصة بالدفعة التي تتقدم إليها.
+
+    </p>
+
+</div>
 
 
-            <!-- ===== Buttons ===== -->
+<div class="steps">
 
-            <div class="buttons">
 
-                <a
-                    href="https://wa.me/201554725979?text=أريد%20طلب%20خدمة%20أبحاث%20التربية%20العسكرية"
-                    class="btn whatsapp"
-                    target="_blank">
-                    💬 اطلب الخدمة عبر واتساب
-                </a>
+<!-- =========================
+     STEP 1
+========================= -->
 
-                <a
-                    href="https://chat.whatsapp.com/IGLhu3G0aN5Hp5sC7itqlg"
-                    class="btn group"
-                    target="_blank">
-                    👥 الانضمام إلى جروب الواتساب
-                </a>
+<section class="step">
 
+    <div class="step-header">
+
+        <div class="step-number">
+            1
+        </div>
+
+        <div>
+
+            <h2 class="step-title">
+                التقديم الإلكتروني المبدئي
+            </h2>
+
+            <div class="step-subtitle">
+                أول خطوة قبل سحب الملف
             </div>
 
         </div>
@@ -467,11 +1027,894 @@
     </div>
 
 
-    <!-- ===== Footer ===== -->
+    <p>
 
-    <footer>
-        © 2026 Student Pro — جميع الحقوق محفوظة
-    </footer>
+        تبدأ الإجراءات بتسجيل بيانات الطالب من خلال
+        الموقع الرسمي لمكتب تنسيق القبول بالكليات العسكرية.
+
+        بعد التسجيل يتم الالتزام بالموعد المحدد للطالب
+        لاستكمال إجراءات سحب الملف واختبار السمات.
+
+    </p>
+
+
+    <div class="documents">
+
+        <div class="document">
+
+            <span class="document-icon">
+                🪪
+            </span>
+
+            <span class="document-text">
+                <strong>بطاقة الرقم القومي</strong>
+                للطالب إذا كانت متاحة.
+            </span>
+
+        </div>
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                📜
+            </span>
+
+            <span class="document-text">
+                <strong>بيانات شهادة الثانوية</strong>
+                طبقًا لنوع الشهادة.
+            </span>
+
+        </div>
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                📱
+            </span>
+
+            <span class="document-text">
+                <strong>رقم هاتف صحيح</strong>
+                للتواصل واستقبال الرسائل.
+            </span>
+
+        </div>
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                🖨️
+            </span>
+
+            <span class="document-text">
+                <strong>طباعة نماذج التقديم</strong>
+                المطلوبة من الموقع عند طلبها.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STEP 2
+========================= -->
+
+<section class="step">
+
+    <div class="step-header">
+
+        <div class="step-number">
+            2
+        </div>
+
+        <div>
+
+            <h2 class="step-title">
+                تجهيز الأوراق قبل سحب الملف
+            </h2>
+
+            <div class="step-subtitle">
+                جهز المستندات مبكرًا لتجنب التأخير
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <p>
+
+        بعض المستندات تحتاج وقتًا لاستخراجها،
+        لذلك من الأفضل البدء في تجهيزها مبكرًا.
+
+    </p>
+
+
+    <h3 class="sub-title">
+        📂 أهم المستندات التي يجب الاستعداد لها
+    </h3>
+
+
+    <div class="documents">
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                📄
+            </span>
+
+            <span class="document-text">
+                <strong>شهادة الميلاد</strong>
+                طبقًا لما يطلبه مكتب التنسيق.
+            </span>
+
+        </div>
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                👨‍👩‍👦
+            </span>
+
+            <span class="document-text">
+                <strong>القيد العائلي للوالد</strong>
+                من المستندات المهمة في الملف.
+            </span>
+
+        </div>
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                👴
+            </span>
+
+            <span class="document-text">
+                <strong>القيد العائلي لجد الوالد</strong>
+                يتم تجهيزه وفق تعليمات مكتب التنسيق.
+            </span>
+
+        </div>
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                👴
+            </span>
+
+            <span class="document-text">
+                <strong>القيد العائلي لجد الوالدة</strong>
+                يتم تجهيزه وفق تعليمات مكتب التنسيق.
+            </span>
+
+        </div>
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                🪪
+            </span>
+
+            <span class="document-text">
+                <strong>صور بطاقات الرقم القومي</strong>
+                للطالب وولي الأمر حسب المطلوب في الملف.
+            </span>
+
+        </div>
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                📸
+            </span>
+
+            <span class="document-text">
+                <strong>صور شخصية حديثة</strong>
+                بالمقاس والمواصفات التي يحددها الملف.
+            </span>
+
+        </div>
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                📋
+            </span>
+
+            <span class="document-text">
+                <strong>صحيفة الحالة الجنائية</strong>
+                إذا كانت مطلوبة ضمن مستندات الدفعة.
+            </span>
+
+        </div>
+
+
+        <div class="document">
+
+            <span class="document-icon">
+                📚
+            </span>
+
+            <span class="document-text">
+                <strong>مستندات المؤهل الدراسي</strong>
+                طبقًا لنوع الشهادة والدفعة.
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="warning">
+
+        <h3>
+            ⚠️ مهم جدًا
+        </h3>
+
+        <p>
+
+            لا تعتمد على أي قائمة قديمة منشورة على الإنترنت
+            باعتبارها القائمة النهائية.
+
+            بيان المستندات المطلوب تجهيزها ومكان استخراجها
+            يكون وفق تعليمات مكتب التنسيق للدفعة الحالية.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STEP 3
+========================= -->
+
+<section class="step">
+
+    <div class="step-header">
+
+        <div class="step-number">
+            3
+        </div>
+
+        <div>
+
+            <h2 class="step-title">
+                سحب الملف
+            </h2>
+
+            <div class="step-subtitle">
+                استكمال إجراءات الملف واختبار السمات
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <p>
+
+        بعد التسجيل الإلكتروني والحصول على الموعد،
+        يتوجه الطالب إلى المكان المحدد من مكتب التنسيق
+        لسحب الملف واستكمال الإجراءات المطلوبة.
+
+    </p>
+
+
+    <div class="checklist">
+
+        <h3>
+            ✅ قبل الذهاب
+        </h3>
+
+        <ul>
+
+            <li>
+                التأكد من موعد الحضور.
+            </li>
+
+            <li>
+                التأكد من المكان المحدد في التعليمات.
+            </li>
+
+            <li>
+                إحضار بطاقة الرقم القومي.
+            </li>
+
+            <li>
+                إحضار المستندات والصور المطلوبة.
+            </li>
+
+            <li>
+                الالتزام بالتعليمات الموجودة في الملف.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STEP 4
+========================= -->
+
+<section class="step">
+
+    <div class="step-header">
+
+        <div class="step-number">
+            4
+        </div>
+
+        <div>
+
+            <h2 class="step-title">
+                اختبار السمات الشخصية
+            </h2>
+
+            <div class="step-subtitle">
+                من مراحل القبول المبكرة
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <p>
+
+        يهدف الاختبار إلى تقييم مدى ملاءمة شخصية الطالب
+        للحياة العسكرية وقدرته على التعامل مع المواقف المختلفة.
+
+        يتم تحديد المواعيد والتعليمات الخاصة بالاختبار
+        من مكتب التنسيق.
+
+    </p>
+
+</section>
+
+
+<!-- =========================
+     STEP 5
+========================= -->
+
+<section class="step">
+
+    <div class="step-header">
+
+        <div class="step-number">
+            5
+        </div>
+
+        <div>
+
+            <h2 class="step-title">
+                الاختبارات بعد سحب الملف
+            </h2>
+
+            <div class="step-subtitle">
+                المراحل تختلف حسب الكلية والدفعة
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="tests">
+
+
+        <div class="test">
+
+            <div class="test-icon">
+                🩺
+            </div>
+
+            <h3>
+                الكشف الطبي
+            </h3>
+
+            <p>
+                تقييم اللياقة الطبية وفق معايير
+                القبول بالكليات العسكرية.
+            </p>
+
+        </div>
+
+
+        <div class="test">
+
+            <div class="test-icon">
+                🏃
+            </div>
+
+            <h3>
+                اختبار اللياقة البدنية
+            </h3>
+
+            <p>
+                اختبار مستوى اللياقة البدنية
+                طبقًا للمعايير المحددة.
+            </p>
+
+        </div>
+
+
+        <div class="test">
+
+            <div class="test-icon">
+                🧠
+            </div>
+
+            <h3>
+                الاختبارات النفسية
+            </h3>
+
+            <p>
+                تقييم القدرة النفسية والتعامل
+                مع المواقف المختلفة.
+            </p>
+
+        </div>
+
+
+        <div class="test">
+
+            <div class="test-icon">
+                📚
+            </div>
+
+            <h3>
+                المعلومات العامة
+            </h3>
+
+            <p>
+                اختبار في مجموعة من المعلومات
+                العامة والثقافية.
+            </p>
+
+        </div>
+
+
+        <div class="test">
+
+            <div class="test-icon">
+                💻
+            </div>
+
+            <h3>
+                الاختبار التفضيلي
+            </h3>
+
+            <p>
+                قد يشمل اللغة الأجنبية والحاسب
+                الآلي وفق تعليمات الاختبار.
+            </p>
+
+        </div>
+
+
+        <div class="test">
+
+            <div class="test-icon">
+                🏊
+            </div>
+
+            <h3>
+                قفزة الثقة
+            </h3>
+
+            <p>
+                من الاختبارات المحددة ضمن إجراءات
+                القبول بالكليات العسكرية.
+            </p>
+
+        </div>
+
+
+        <div class="test">
+
+            <div class="test-icon">
+                👨‍⚖️
+            </div>
+
+            <h3>
+                الاختبار الشخصي
+            </h3>
+
+            <p>
+                كشف الهيئة وتقييم الشخصية والمظهر
+                والثقافة واللياقة والرغبة في الالتحاق.
+            </p>
+
+        </div>
+
+
+        <div class="test">
+
+            <div class="test-icon">
+                🔬
+            </div>
+
+            <h3>
+                الكشف الطبي المتقدم
+            </h3>
+
+            <p>
+                تحاليل وفحوصات طبية متقدمة
+                وفق المرحلة المحددة للطالب.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STEP 6
+========================= -->
+
+<section class="step">
+
+    <div class="step-header">
+
+        <div class="step-number">
+            6
+        </div>
+
+        <div>
+
+            <h2 class="step-title">
+                ترتيب العملية بالكامل
+            </h2>
+
+            <div class="step-subtitle">
+                من البداية حتى المراحل النهائية
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">
+                1
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    التسجيل الإلكتروني
+                </h3>
+
+                <p>
+                    تسجيل بيانات الطالب على الموقع الرسمي
+                    خلال فترة التقديم.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">
+                2
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    تحديد الموعد
+                </h3>
+
+                <p>
+                    متابعة الموعد والتعليمات الصادرة
+                    من مكتب التنسيق.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">
+                3
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    سحب الملف
+                </h3>
+
+                <p>
+                    الحضور في الموعد المحدد واستكمال
+                    إجراءات الملف.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">
+                4
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    اختبار السمات
+                </h3>
+
+                <p>
+                    إجراء اختبار السمات الشخصية
+                    طبقًا للموعد المحدد.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">
+                5
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    الكشف الطبي
+                </h3>
+
+                <p>
+                    إجراء الفحوصات الطبية المطلوبة.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">
+                6
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    الاختبارات البدنية والنفسية
+                </h3>
+
+                <p>
+                    استكمال الاختبارات المحددة للطالب.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">
+                7
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    المعلومات العامة والاختبارات التفضيلية
+                </h3>
+
+                <p>
+                    إجراء الاختبارات المحددة حسب الكلية.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">
+                8
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    الاختبار الشخصي «الهيئة»
+                </h3>
+
+                <p>
+                    مرحلة مهمة لتقييم الشخصية والمظهر
+                    والثقافة واللياقة والرغبة في الالتحاق.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-number">
+                9
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    المراحل الطبية المتقدمة والنتيجة
+                </h3>
+
+                <p>
+                    استكمال المراحل المطلوبة طبقًا لتوجيهات
+                    مكتب التنسيق وإعلان النتيجة بالطريقة المحددة.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PREPARATION
+========================= -->
+
+<section class="step">
+
+    <div class="step-header">
+
+        <div class="step-number">
+            ✓
+        </div>
+
+        <div>
+
+            <h2 class="step-title">
+                نصائح مهمة قبل الاختبارات
+            </h2>
+
+            <div class="step-subtitle">
+                لتجنب المشاكل أثناء الإجراءات
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="checklist">
+
+        <ul>
+
+            <li>
+                راجع موعد كل اختبار قبل الذهاب.
+            </li>
+
+            <li>
+                احتفظ ببطاقة الرقم القومي والمستندات المطلوبة.
+            </li>
+
+            <li>
+                التزم بالتعليمات الخاصة بالملابس والمظهر.
+            </li>
+
+            <li>
+                لا تعتمد على مواعيد أو تعليمات قديمة.
+            </li>
+
+            <li>
+                تابع رقم الهاتف المسجل في الملف باستمرار.
+            </li>
+
+            <li>
+                لا تتعامل مع أي شخص يدعي قدرته على ضمان القبول.
+            </li>
+
+            <li>
+                لا تقدم أي بيانات غير صحيحة في الملف.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="warning">
+
+        <h3>
+            🚨 تحذير
+        </h3>
+
+        <p>
+
+            وزارة الدفاع تحذر من الأشخاص الذين يدعون قدرتهم
+            على مساعدة المتقدمين في الالتحاق بالقوات المسلحة
+            مقابل مبالغ مالية.
+
+            الإجراءات الرسمية تتم من خلال الجهات والمواقع
+            الرسمية فقط.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- OFFICIAL WEBSITE -->
+
+<div class="official">
+
+    <a
+        href="https://tansiq.mod.gov.eg/"
+        target="_blank">
+
+        🌐 الموقع الرسمي لمكتب التنسيق
+
+    </a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+    <h3>
+        Student Pro
+    </h3>
+
+    <p>
+        خدمات طلابية وإلكترونية في مكان واحد © 2026
+    </p>
+
+</footer>
+
 
 </body>
+
 </html>
